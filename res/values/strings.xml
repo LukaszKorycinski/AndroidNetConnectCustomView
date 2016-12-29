@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">IndexWIG</string>
+    <string name="download_button">Download Data</string>
+    <string name="draw_graph_button">Draw Graph</string>
+    <string name="average">Average</string>
+    <string name="minimum">Minimum</string>
+    <string name="maximum">Maximum</string>
+</resources>
