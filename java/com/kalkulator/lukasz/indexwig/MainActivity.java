@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -39,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
     @Override
     public void processFinish(List<Float> output){//receive the result from DownloadWigDataFromNet class
         averageTextView.setText( getResources().getString(R.string.average) +" "+ Statistic.calAverage(output).toString() );
-        maximumTextView.setText( getResources().getString(R.string.maximum) +" "+ Statistic.calMaximum(output).toString() );
-        minimumTextView.setText( getResources().getString(R.string.minimum) +" "+ Statistic.calMinimum(output).toString() );
+        maximumTextView.setText( getResources().getString(R.string.maximum) +" "+ Collections.max(output).toString() );
+        minimumTextView.setText( getResources().getString(R.string.minimum) +" "+ Collections.min(output).toString() );
         graphCustomView.SetWigData(output);
         graphCustomView.invalidate();
     }
