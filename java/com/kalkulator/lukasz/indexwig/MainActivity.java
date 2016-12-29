@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
         averageTextView.setText( getResources().getString(R.string.average) +" "+ Statistic.calAverage(output).toString() );
         maximumTextView.setText( getResources().getString(R.string.maximum) +" "+ Statistic.calMaximum(output).toString() );
         minimumTextView.setText( getResources().getString(R.string.minimum) +" "+ Statistic.calMinimum(output).toString() );
-        GraphCustomView.SetWigData(output);
+        graphCustomView.SetWigData(output);
         graphCustomView.invalidate();
     }
 
