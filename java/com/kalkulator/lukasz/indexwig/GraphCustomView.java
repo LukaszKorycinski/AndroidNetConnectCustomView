@@ -15,7 +15,7 @@ import java.util.List;
  */
 
 class GraphCustomView extends View {
-    private static List<Float> WigDataForGraph;
+    private List<Float> WigDataForGraph;
 
     public GraphCustomView(Context context) {//constructor
         super(context);
@@ -32,7 +32,7 @@ class GraphCustomView extends View {
 
 
 
-    public static void SetWigData(List<Float> wigdata) {
+    public void SetWigData(List<Float> wigdata) {
         WigDataForGraph=wigdata;
     }
 
