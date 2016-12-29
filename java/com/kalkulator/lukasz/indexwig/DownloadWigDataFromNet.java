@@ -18,18 +18,18 @@ import java.util.StringTokenizer;
  * Created by Lukasz on 2016-12-28.
  */
 
-class DownloadWigDataFromNet extends AsyncTask<String, Void, ArrayList<Float>> {
+class DownloadWigDataFromNet extends AsyncTask<String, Void, List<Float>> {
     public AsyncResponse delegate = null;
 
     @Override
-    protected void onPostExecute(ArrayList<Float> result) {
+    protected void onPostExecute(List<Float> result) {
         delegate.processFinish(result);
     }
 
 
     @Override
-    protected ArrayList<Float> doInBackground(String... params) {
-        ArrayList<Float> outList=new ArrayList<Float>();
+    protected List<Float> doInBackground(String... params) {
+        List<Float> outList=new ArrayList<Float>();
         String urlString=params[0];
 
         URL url;
