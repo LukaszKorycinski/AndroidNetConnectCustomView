@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
         DownloadButton.setOnClickListener(v -> {
             downloadWigDataFromNet=new DownloadWigDataFromNet();//task cant be executed  twice
             downloadWigDataFromNet.delegate = this;
-            downloadWigDataFromNet.execute("http://xml.wyborcza.biz/ArchivalProfileExportServlet.servlet?p5=WIG&p6=2016-06-28&p7=2016-12-28&p8=1&p3=TXT&type=INDEX");
+            downloadWigDataFromNet.execute(Constants.BASE_URL);
         });
     }
 
