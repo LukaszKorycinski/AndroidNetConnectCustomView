@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -36,17 +37,17 @@ class GraphCustomView extends View {
         WigDataForGraph=wigdata;
     }
 
-    
+
 
     private Float CalculateValueForGraphX(int Value, int length) {
         return (Value/((float)length))*getWidth();
     }
 
     private Float CalculateValueForGraphY(Float Value) {
-        Float minV=Statistic.calMinimum(WigDataForGraph);
-        Float maxV=Statistic.calMaximum(WigDataForGraph);
-        Float maxSubMin=maxV-minV;
-        Float out=((Value-minV)/maxSubMin);
+        Float minV = Collections.min(WigDataForGraph);
+        Float maxV = Collections.max(WigDataForGraph);
+        Float maxSubMin = maxV-minV;
+        Float out = ((Value-minV)/maxSubMin);
         return (1.0f-out)*getHeight();//reverse (drawLine 0,0 point is in top left corner)
     }
 
