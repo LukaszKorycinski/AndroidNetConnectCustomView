@@ -36,27 +36,15 @@ class GraphCustomView extends View {
         WigDataForGraph=wigdata;
     }
 
-    private Float GetMaxValue() {
-        Float max=WigDataForGraph.get(0);
-        for(Float f:WigDataForGraph)
-            if(f>max)max=f;
-        return max;
-    }
-
-    private Float GetMinValue() {
-        Float min=WigDataForGraph.get(0);
-        for(Float f:WigDataForGraph)
-            if(f<min)min=f;
-        return min;
-    }
+    
 
     private Float CalculateValueForGraphX(int Value, int length) {
         return (Value/((float)length))*getWidth();
     }
 
     private Float CalculateValueForGraphY(Float Value) {
-        Float minV=GetMinValue();
-        Float maxV=GetMaxValue();
+        Float minV=Statistic.calMinimum(WigDataForGraph);
+        Float maxV=Statistic.calMaximum(WigDataForGraph);
         Float maxSubMin=maxV-minV;
         Float out=((Value-minV)/maxSubMin);
         return (1.0f-out)*getHeight();//reverse (drawLine 0,0 point is in top left corner)
